@@ -1,0 +1,40 @@
+<section class="margin-2">
+    <h2 class="title">Currency Converter</h2>
+    <form [formGroup]="converterForm" (ngSubmit)="onConvert()" class="card">
+        <button type="submit" [disabled]="!converterForm.valid" style="display: block;">Convert</button>
+        <div class="flex">
+            <div class="flex">
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input id="amount" type="number" formControlName="amount" placeholder="Enter amount" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="fromCurrency">From Currency</label>
+                    <select id="fromCurrency" formControlName="fromCurrency">
+                        <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fromCurrency">To Currency</label>
+                    <select formControlName="toCurrency">
+                        <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="button" (click)="swapCurrencies()">Swap</button>
+        </div>
+
+        <div *ngIf="convertedAmount !== null">
+            <p>{{amount}} {{fromCurrency}} : {{convertedAmount |
+                number: '1.2-2'}}</p>
+        </div>
+
+        <button [routerLink]="['/currency-details']" *ngIf="!inputDisable"
+            [queryParams]="{ fromCurrency: converterForm.get('fromCurrency')?.value, toCurrency: converterForm.get('toCurrency')?.value }">
+            View Details
+        </button>
+
+    </form>
+</section>

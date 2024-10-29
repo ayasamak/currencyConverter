@@ -1,0 +1,14 @@
+<app-currency-converter [inputDisable]=true></app-currency-converter>
+<div class="currency-details flex-center">
+    <h2 class="title">Currency Details</h2>
+    <div class="flex">
+        <div class="title">
+            <h3>From Currency:<span>{{fromCurrencyName}}</span></h3>
+          </div>
+          <div class="title">
+            <h3>To Currency:<span>{{toCurrencyName}}</span></h3>
+          </div>
+          <button (click)="goBack()">Go Back to Home</button>
+    </div>
+  </div>
+  <app-historical-details></app-historical-details>

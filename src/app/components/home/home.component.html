@@ -1,0 +1,23 @@
+<app-currency-converter (currencyChange)="handleConversionData($event)" [inputDisable]=false></app-currency-converter>
+<div class="flex flex-center">
+    <div class="table">
+        <h4 class="title">Quick Conversions (From {{conversionData.fromCurrency}} to
+            {{conversionData.toCurrency}})</h4>
+        <ul>
+            <li *ngFor="let conversion of quickConversionsFrom">
+                {{conversion.amount}} {{conversionData.fromCurrency}} = {{conversion.converted |
+                number: '1.2-2'}} {{conversionData.toCurrency}}
+            </li>
+        </ul>
+    </div>
+    <div class="table">
+        <h4 class="title">Quick Conversions (From {{conversionData.toCurrency}} to
+            {{conversionData.fromCurrency}})</h4>
+        <ul>
+            <li *ngFor="let conversion of quickConversionsTo">
+                {{conversion.amount}} {{conversionData.toCurrency}} = {{conversion.converted | number:
+                '1.2-2'}} {{conversionData.fromCurrency}}
+            </li>
+        </ul>
+    </div>
+</div>

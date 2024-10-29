@@ -1,0 +1,35 @@
+.currency-details {
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  input{
+    width: 18rem;
+}
+  
+  input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+
+  .flex{
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .flex-center{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+

@@ -1,0 +1,37 @@
+<div class="details">  
+    <h3 class="title">Historical Data</h3>
+    <div  class="card flex flex-center">
+      <div>
+       <h4>Last Year</h4>
+      <pre>{{ historicalData.year | json }}</pre>
+       </div>
+       <div>
+      <h4>Last Month</h4>
+      <pre>{{ historicalData.month | json }}</pre>
+       </div>
+       <div>
+      <h4>Last Day</h4>
+      <pre>{{ historicalData.day | json }}</pre>
+      </div>
+      </div>
+      <div class="flex flex-center">
+  <div>
+    <h3 class="title">Conversions from {{ selectedCurrency }}</h3>
+    <ul>
+      <li *ngFor="let currency of predefinedCurrencies">
+        {{ currency }}: {{ fromConversions[currency] }}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3 class="title">Conversions to {{ selectedCurrency }}</h3>
+    <ul>
+      <li *ngFor="let currency of predefinedCurrencies">
+        {{ currency }}: {{ toConversions[currency] }}
+      </li>
+    </ul>
+  </div>
+  </div>
+    
+  
+    
